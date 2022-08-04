@@ -8,11 +8,13 @@
      </queries>
    <application
         android:label="MR DEAL VENDOR"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic="true"
         android:exported = "true">
+         <!-- <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyDfGXj8CkiwHqpJ40xLq7mdwi60Iwc3C_0"/> -->
          <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyDfGXj8CkiwHqpJ40xLq7mdwi60Iwc3C_0"/>
+               android:value="AIzaSyBUyxhDwd1oXCZnKVckd_zQ_I79jKJ824w"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
