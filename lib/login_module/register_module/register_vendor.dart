@@ -211,7 +211,7 @@ class _RegisterVendorPageState extends State<RegisterVendorPage>
             '${(await getTemporaryDirectory()).absolute.path}/${DateTime.now().millisecondsSinceEpoch}.$_extension';
         final _compressedFile = await FlutterImageCompress.compressAndGetFile(
             _pickedFile.path, tempDir,
-            format: _getcompressformat(_extension), quality: 88);
+            format: _getcompressformat(_extension), quality: 50);
 
         setState(() {
           _imagePathbase64 = "data:image/png;base64," +

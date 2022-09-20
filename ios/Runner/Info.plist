@@ -46,8 +46,15 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSLocationAlwaysUsageDescription</key>
-    <string>Location is required for user interaction</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Location is required for user interaction</string>
+	<string>Mr Deal Vendor needs access to your location to help you find the nearest outlets and shops</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mr Deal Vendor needs access to your location to help you find the nearest outlets and shops</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs camera access to scan QR codes</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs camera access to scan QR codes</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAppTransportSecurity</key> <dict> <key>NSAllowsArbitraryLoads</key> <true/> </dict>
 </dict>
 </plist>

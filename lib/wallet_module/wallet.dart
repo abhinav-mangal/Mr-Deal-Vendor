@@ -46,26 +46,28 @@ class _WalletPageState extends State<WalletPage> implements WalletView {
     return Container(
       color: white_color,
       margin: const EdgeInsets.symmetric(horizontal: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          const TextWidget(
-            text: 'Transaction History',
-            size: text_size_18,
-            weight: FontWeight.w500,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          _isLoading
-              ? const Center(
-                  child: SizedBox(height: 500, child: Loader()),
-                )
-              : _trxnHistry()
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            const TextWidget(
+              text: 'Transaction History',
+              size: text_size_18,
+              weight: FontWeight.w500,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            _isLoading
+                ? const Center(
+                    child: SizedBox(height: 500, child: Loader()),
+                  )
+                : _trxnHistry()
+          ],
+        ),
       ),
     );
   }
@@ -84,17 +86,22 @@ class _WalletPageState extends State<WalletPage> implements WalletView {
               itemCount: _walletModelResp?.data?.length ?? 0,
               padding: const EdgeInsets.only(top: 10),
               itemBuilder: (context, i) {
-                String warranty(){
-                  if (_walletModelResp?.data![i].warrantyDays== true && _walletModelResp?.data![i].warrantyMonthly == true) {
+                String warranty() {
+                  if (_walletModelResp?.data![i].warrantyDays == true &&
+                      _walletModelResp?.data![i].warrantyMonthly == true) {
                     return "10 days replacement warranty & 6 month functional warranty";
-                  }else if(_walletModelResp?.data![i].warrantyMonthly == true && _walletModelResp?.data![i].warrantyDays== false){
+                  } else if (_walletModelResp?.data![i].warrantyMonthly ==
+                          true &&
+                      _walletModelResp?.data![i].warrantyDays == false) {
                     return "6 month functional warranty";
-                  }else if(_walletModelResp?.data![i].warrantyDays== true && _walletModelResp?.data![i].warrantyMonthly == false){
+                  } else if (_walletModelResp?.data![i].warrantyDays == true &&
+                      _walletModelResp?.data![i].warrantyMonthly == false) {
                     return "10 days replacement warranty";
-                  } else{
+                  } else {
                     return "N/A";
                   }
                 }
+
                 return GestureDetector(
                   onTap: () {
                     // Navigator.push(
@@ -154,14 +161,14 @@ class _WalletPageState extends State<WalletPage> implements WalletView {
                             weight: FontWeight.w500,
                           ),
                           TextWidget(
-                            text:
-                                'Warranty Status : ${warranty()}',
+                            text: 'Warranty Status : ${warranty()}',
                             size: text_size_14,
                             weight: FontWeight.w500,
                           ),
                           TextWidget(
                             text:
-                                'Service Status : ${_walletModelResp?.data![i].bookingStatus}' ' ${_walletModelResp?.data![i].editedTime ?? ''}',
+                                'Service Status : ${_walletModelResp?.data![i].bookingStatus}'
+                                ' ${_walletModelResp?.data![i].editedTime ?? ''}',
                             size: text_size_14,
                             weight: FontWeight.w500,
                           ),

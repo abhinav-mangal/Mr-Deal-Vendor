@@ -60,15 +60,17 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget _body() {
     return Container(
       height: MediaQuery.of(context).size.height,
-      color: theme_color,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          _title(),
-        ],
+      color: Color(0xFF215181),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 50,
+            ),
+            _title(),
+          ],
+        ),
       ),
     );
   }
@@ -146,7 +148,7 @@ class _SplashScreenState extends State<SplashScreen> {
             body: _body(),
             bottomNavigationBar: Container(
               height: 120,
-              color: theme_color,
+              color: Color(0xFF215181),
               child: Column(
                 children: [
                   _subtitle(),
